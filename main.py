@@ -34,14 +34,6 @@ def index():
     return render_template("index.html", tasks=tasks)
 
 
-@app.route('/login',methods = ['POST', 'GET'])
-def login():
-    if(request.method=='POST'):
-        email=request.form['email']
-        password=request.form['pass']
-    return render_template("login.html")
-
-
 @app.route('/edit/<string:sno>',methods = ['POST', 'GET'])
 def edit(sno):
     if request.method == 'POST':
